@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+div {
+  position: relative;
+  margin-left: var(--tui-tree-item-indent, 1.5rem);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s;
+
+  &.expanded {
+    max-height: 100vh;
+  }
+}

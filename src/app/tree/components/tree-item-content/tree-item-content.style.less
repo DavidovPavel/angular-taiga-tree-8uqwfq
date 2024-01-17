@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  min-height: 24px;
+  align-items: center;
+
+  :host-context(tree-item._expandable):not(._expandable) {
+    padding-left: 2rem;
+  }
+}
+
+button {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  margin-right: 0.5rem;
+  transition: all 0.3s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-135deg);
+    border: 0 solid gray;
+    border-width: 0 0 2px 2px;
+  }
+
+  &:hover {
+    background: whitesmoke;
+  }
+
+  &:active {
+    background: lightgray;
+  }
+
+  &.expanded {
+    transform: rotate(90deg);
+  }
+}

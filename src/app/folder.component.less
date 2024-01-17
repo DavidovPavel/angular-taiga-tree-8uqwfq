@@ -1,0 +1,22 @@
+:host {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s;
+
+  &._expandable {
+    &:hover {
+      cursor: pointer;
+      background: whitesmoke;
+    }
+  }
+}
+
+img {
+  position: relative;
+  background: inherit;
+  z-index: 1;
+}

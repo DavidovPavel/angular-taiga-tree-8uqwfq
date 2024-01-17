@@ -1,0 +1,16 @@
+<ng-template #template><ng-content></ng-content></ng-template>
+<ng-container *polymorpheusOutlet="
+  content as text; 
+  context: {$implicit: this, template: template}"
+>
+  {{text}}
+</ng-container>
+<div
+  *ngIf="isExpandable"
+  role="group"
+  [class.expanded]="expanded$ | async"
+>
+  <ng-content select="tree-item"></ng-content>
+  <ng-content select="tree"></ng-content>
+</div>
+<ng-container *ngIf="attached$ | async"></ng-container>

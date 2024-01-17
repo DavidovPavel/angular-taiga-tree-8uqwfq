@@ -1,0 +1,14 @@
+<tree-item #view [treeNode]="value">
+  <ng-container
+    *polymorpheusOutlet="
+      content as text;
+      context: {$implicit: value, node: view}"
+  >
+    {{text}}
+  </ng-container>
+  <tree
+    *ngFor="let child of children"
+    [value]="child"
+    [content]="content"
+  ></tree>
+</tree-item>

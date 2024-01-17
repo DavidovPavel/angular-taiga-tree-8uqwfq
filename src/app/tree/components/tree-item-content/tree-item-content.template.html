@@ -1,0 +1,6 @@
+<button
+  *ngIf="isExpandable"
+  [class.expanded]="isExpanded"
+  (click)="onClick()"
+></button>
+<ng-container *ngTemplateOutlet="context.template"></ng-container>
